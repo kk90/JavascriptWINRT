@@ -64,11 +64,12 @@ DB = (function () {
         },
         remove: function (item) {
             if (database != null) {
-                var filesObjectStore =
-                  database.transaction("notes", "readwrite").objectStore("notes");
+                var db = database;
+                var trans = db.transaction("notes", "readwrite");
+                var store = trans.objectStore("notes");
 
 
-                var request = filesObjectStore.delete("" + item.id);
+                var request = store.delete("" + item.id);
                 request.onsuccess = function (event) {
                     console.log("removed"+item.id);
                     DB.getAll();

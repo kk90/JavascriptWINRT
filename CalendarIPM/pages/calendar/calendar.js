@@ -32,7 +32,7 @@ function init() {
     scheduler.config.details_on_dblclick = true;
    
     scheduler.init('scheduler_here');
-    var delay = 300;//1 seconds
+    var delay = 600;//1 seconds
     setTimeout(function () {
 
         //your code to be executed after 1 seconds
