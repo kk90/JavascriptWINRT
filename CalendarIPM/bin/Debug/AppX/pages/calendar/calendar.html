@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>calendar</title>
+
+    <!-- WinJS references -->
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <!-- core dhtmlxScheduler files -->
+    <script src="/dhtmlxScheduler/dhtmlxscheduler.js"></script>
+    <link href="/dhtmlxScheduler/dhtmlxscheduler.css" rel="stylesheet" />
+
+
+
+    <script src="/js/indexDBengine.js"></script>
+    <link href="calendar.css" rel="stylesheet" />
+    <script src="calendar.js"></script>
+
+</head>
+
+<body>
+    <div class="calendar fragment">
+        <header aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Calendar View</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div id="scheduler_here" class="dhx_cal_container" style='width:90%; height:100%;'>
+                <div class="dhx_cal_navline">
+                    <div class="dhx_cal_prev_button"> </div>
+                    <div class="dhx_cal_next_button"> </div>
+                    <div class="dhx_cal_today_button"></div>
+                    <div class="dhx_cal_date"></div>
+                    <div class="dhx_cal_tab" name="day_tab" style="right:204px;"></div>
+                    <div class="dhx_cal_tab" name="week_tab" style="right:140px;"></div>
+                    <div class="dhx_cal_tab" name="month_tab" style="right:76px;"></div>
+                </div>
+                <div class="dhx_cal_header"></div>
+                <div class="dhx_cal_data"></div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
