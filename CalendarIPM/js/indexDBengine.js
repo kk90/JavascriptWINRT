@@ -35,8 +35,7 @@ DB = (function () {
                     database = event.target.result;
                     if (!database.objectStoreNames.contains("notes")) {
                         var objectStore = database.createObjectStore("notes", {
-                            keyPath: "id",
-                            autoIncrement: false
+                            keyPath: "id"
                         });
                     }
 
@@ -60,7 +59,22 @@ DB = (function () {
             }
         },
         edit: function (item) {
+            if (database != null) {
+                var db = database;
+                var trans = db.transaction("notes", "readwrite");
+                var store = trans.objectStore("notes");
 
+
+                var request = store.delete(parseInt(item.id));
+                request.onsuccess = function (event) {
+                    store.add(item);
+                };
+
+                request.onerror = function (event) {
+                    console.log("shit..");
+                    DB.getAll();
+                };
+            }
         },
         remove: function (item) {
             if (database != null) {
@@ -68,8 +82,8 @@ DB = (function () {
                 var trans = db.transaction("notes", "readwrite");
                 var store = trans.objectStore("notes");
 
-
-                var request = store.delete("" + item.id);
+                
+                var request = store.delete(parseInt(item.id));
                 request.onsuccess = function (event) {
                     console.log("removed"+item.id);
                     DB.getAll();

@@ -26,11 +26,17 @@
         <section aria-label="Main content" role="main">
            
             <button style="vertical-align:top" onclick="goToCallendar()" data-win-options="{label: 'Calendar'}">Calendar</button>
+            <button style="vertical-align:top" onclick="removefirst()" data-win-options="{label: 'RMV'}">Remove last</button>
 
             <div id="taskList">
 
             </div>
+            <textarea id="addTask" rows="4" cols="50">
 
+
+
+            </textarea>
+            <button style="vertical-align:top" onclick="addone()" data-win-options="{label: 'ADD'}">Add task</button>
         </section>
     </div>
 </body>
